@@ -1,0 +1,26 @@
+{
+  "expo": {
+    "name": "reactnativesalledutemps",
+    "description": "An empty new project",
+    "slug": "reactnativesalledutemps",
+    "privacy": "public",
+    "sdkVersion": "22.0.0",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "primaryColor": "#cccccc",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/logo.png",
+      "backgroundColor": "#000000"
+    },
+    "packagerOpts": {
+      "assetExts": [
+        "ttf",
+        "mp4"
+      ]
+    },
+    "ios": {
+      "supportsTablet": true
+    }
+  }
+}
