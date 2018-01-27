@@ -33,7 +33,7 @@ const Tab = TabNavigator({
             },
             style: {
                 height: 13,
-                backgroundColor: "rgba(30, 30, 30, 1)"
+                backgroundColor: "rgba(20, 20, 20, 1)"
             }
         }
     });

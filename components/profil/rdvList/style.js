@@ -40,7 +40,7 @@ const style = StyleSheet.create({
         backgroundColor: "transparent"
     },
     list: {
-        backgroundColor: 'rgba(52, 52, 52, 0.9)',
+        backgroundColor: 'rgba(52, 52, 52, 0.8)',
         marginTop: 0
     },
     modal: {

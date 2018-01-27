@@ -10,6 +10,8 @@ import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 
 global.serverPath = "http://127.0.0.1:8080";
+// "https://safe-retreat-14914.herokuapp.com/"
+// "http://127.0.0.1:8080"
 
 const Tabs = TabNavigator({
   Home: {
@@ -25,15 +27,15 @@ const Tabs = TabNavigator({
     // swipeEnabled: true,
     tabBarPosition: "bottom",
     tabBarOptions: {
-      inactiveTintColor: "#111111",
+      inactiveTintColor: "rgba(10, 10, 10, 1)",
       activeTintColor: "#ffffff",
       labelStyle: {
         fontSize: 12,
       },
       style: {
-        backgroundColor: "#111111",
+        backgroundColor: "rgba(10, 10, 10, 1)",
         borderTopWidth: 1,
-        borderColor: '#111111',
+        borderColor: "rgba(10, 10, 10, 1)",
       }
     }
   });

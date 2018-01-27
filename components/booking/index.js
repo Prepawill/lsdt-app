@@ -131,6 +131,7 @@ class Booking extends React.Component {
 
     handleSubmit = (event) => {
         const self = this;
+        //changement de date//
         const newDate = moment(self.state.date).format('dddd Do MMMM YYYY');
         fetch(serverPath + '/timetable?date=' + newDate + '&activite=' + this.state.selectedActivity, {
             method: 'get'

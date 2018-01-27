@@ -28,11 +28,13 @@ class Sitting extends React.Component {
     }
 
     addDay = (event) => {
-        const date = moment(this.props.sittingDate).add(1, 'days').format('dddd Do MMMM YYYY');
+        const date = moment(this.props.sittingDate).add(1, 'days');
+        console.log("addDay",date.format('dddd Do MMMM YYYY'));
     }
 
     subtractDay = (event) => {
-        const date = moment(this.props.sittingDate).subtract(1, 'days').format('dddd Do MMMM YYYY');
+        const date = moment(this.props.sittingDate).subtract(1, 'days');
+        console.log("substractDay",date.format('dddd Do MMMM YYYY'));
     }
 
     navigateConfirm = hour => {

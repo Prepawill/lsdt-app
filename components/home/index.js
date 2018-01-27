@@ -1,7 +1,7 @@
 import React from 'react';
-import ModalGoal from './modal';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import Modal from 'react-native-modal';
 import style from './style';
+import { StyleSheet, Text, View, Image,ScrollView } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import { Button } from 'react-native-elements';
 import { connect } from 'react-redux';
@@ -19,12 +19,15 @@ class Home extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { isModalGoalVisible: false, isFontLoaded: false }
+        this.state = { 
+            isFontLoaded: false,
+            objectif: { objectif: 'REMERCIER 3 CHOSES QUI SE SONT PRODUITES HIER', succes: "Selon les dernières études américaines en psychologie, La gratitude participerait activement à la bonne santé émotionnelle. Elle renforce les liens sociaux, affaiblit les émotions négatives et procure un sentiment de bien-être. Une bonne santé émotionnelle permet d'atteindre vos objectifs plus rapidement." },
+        }
     }
 
-    toggleModalGoalVisibility = () => {
-        this.setState({ isModalGoalVisible: !this.state.isModalGoalVisible });
-    }
+    _showModalObectif = () => this.setState({ isModalVisibleObjectif: true })
+
+    _hideModalObjectif = () => this.setState({ isModalVisibleObjectif: false })
 
     componentDidMount() {
         Font.loadAsync({
@@ -61,12 +64,28 @@ class Home extends React.Component {
                                 shadowOpacity: 0.5,
                                 shadowOffset: { height: 10 },
                             }}
-                            onPress={this.toggleModalGoalVisibility} />
+                            onPress={this._showModalObectif} />
                     </View>
                 </View>
-                <ModalGoal
-                    isVisible={this.state.isModalGoalVisible}
-                    onDisapearCallBack={this.toggleModalGoalVisibility} />
+                <Modal isVisible={this.state.isModalVisibleObjectif}>
+                <View style={style.modal}>
+                    <ScrollView>
+                        <View>
+                            <Text style={style.objectif}>{this.state.objectif.objectif}</Text>
+                        </View>
+                        <View>
+                            <Text style={[style.succes, isFontLoaded && { fontFamily: 'Poppins' }]}>{this.state.objectif.succes}</Text>
+                        </View>
+                        <View>
+                            <Button
+                                small
+                                buttonStyle={{ backgroundColor: "#4c994a", borderRadius: 12 }}
+                                title='OK'
+                                onPress={this._hideModalObjectif} />
+                        </View>
+                    </ScrollView>
+                </View>
+            </Modal>
             </Image>
         );
     }

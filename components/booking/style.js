@@ -25,7 +25,7 @@ const style = StyleSheet.create({
     modal: {
         flex: 0.5,
         justifyContent: 'space-around',
-        backgroundColor: '#ffffff',
+        backgroundColor: 'rgba(245, 245, 245,0.9)',
         borderRadius: 20
     },
     textModal: {
